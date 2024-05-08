@@ -1,15 +1,64 @@
 import { useState } from 'react'
-import PropsExample from './components/Education.jsx'
-import { ContactComp } from './components/Contact.jsx'
+import { ExpandBox } from './components/CommonComps.jsx'
+import { Contact } from './components/Contact.jsx'
+import { Preview } from './components/Preview.jsx'
+import { Experience } from './components/Experience.jsx'
+import { Education } from './components/Education.jsx'
 import './styles/App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
+  const [location, setLocation] = useState('')
+
+  const handleNameChange = (value) => {
+    setName(value); 
+  };
+
+  const handlePhoneChange = (value) => {
+    setPhone(value); 
+  };
+
+  const handleEmailChange = (value) => {
+    setEmail(value); 
+  };
+
+  const handleLocationChange = (value) => {
+    setLocation(value); 
+  };
 
   return (
     <>
-      <ContactComp />
-
+      <div className='App'>
+        <div className = 'editor-container'>
+          <h1>CV Generator</h1>
+          <ExpandBox title="Personal Information">
+            <Contact 
+              onNameChange={handleNameChange} 
+              onPhoneChange={handlePhoneChange} 
+              onEmailChange={handleEmailChange} 
+              onLocationChange={handleLocationChange} 
+              name={name} 
+              phone={phone} 
+              email={email} 
+              location={location} 
+              />
+          </ExpandBox>
+          <ExpandBox title="Work Experience">
+            <Experience />
+          </ExpandBox>
+          <ExpandBox title="Education">
+            <Education />
+          </ExpandBox>
+        </div>
+        <Preview 
+          name={name} 
+          phone={phone} 
+          email={email} 
+          location={location} 
+        />
+      </div>
     </>
   )
 }

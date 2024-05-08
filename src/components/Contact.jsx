@@ -1,17 +1,46 @@
-import React, { useState } from "react";
-import "../styles/App.css";
+// src/components/Contact.jsx
+import { InputComponent } from "./CommonComps.jsx";
+import { testData } from "../data/data.js";
+import "../styles/Contact.css";
 
-export const ContactComp = () => {
+export function Contact({
+        onNameChange, 
+        onPhoneChange, 
+        onEmailChange, 
+        onLocationChange, 
+        name, 
+        phone, 
+        email, 
+        location 
+}) {
+
   return (
-  <div>
-      <h1>Test title</h1>
-      <svg>
-          <circle cx="25" cy="75" r="20" stroke="green" strokeWidth="2" />
-      </svg>
-      <form>
-          <input type="text" />
-      </form>
-  </div>
+    <>
+      <div className='form-column'>
+        <InputComponent onInputChange={onNameChange} 
+                        defaultValue={name} 
+                        value={name} 
+                        placeholder='First and Last Name' 
+                        label= "Name" />
+        <InputComponent onInputChange={onPhoneChange} 
+                        defaultValue={phone} 
+                        value={phone} 
+                        placeholder="Phone"
+                        label="Phone Number" />
+      </div>
+      <div className='form-column'>
+        <InputComponent onInputChange={onEmailChange} 
+                        defaultValue={email} 
+                        value={email} 
+                        placeholder="Email" 
+                        label="Email"/>
+        <InputComponent onInputChange={onLocationChange} 
+                        defaultValue={location} 
+                        value={location} 
+                        placeholder="Location"
+                        label="Location"/>
+      </div>
+    </>
   )
 }
 

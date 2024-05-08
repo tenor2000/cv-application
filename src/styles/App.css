@@ -4,19 +4,21 @@
   box-sizing: border-box;
 }
 
+
+h1 {
+  text-align: center;
+}
 .App {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   transition: all 0.1s ease-in;
 }
 
 .App button {
-  padding: 1rem 2rem;
-  font-size: 1.5rem;
+
+  font-size: 1rem;
   font-weight: 600;
   border: none;
   border-radius: 0.5rem;
@@ -36,3 +38,22 @@
   outline: 5px solid #000;
   background-color: #fff;
 }
+
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  transition: all 0.1s ease-in;
+  min-width: 500px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.border-container {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+

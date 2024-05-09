@@ -1,0 +1,54 @@
+input {
+    margin: 1rem;
+}  
+
+.preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.1s ease-in;
+    width: 900px;
+    margin: 10px;
+  }
+
+.preview-sheet {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid black;
+    align-items: center;
+    width: 90%;
+    color: black;
+    transition: all 0.1s ease-in;
+    position: relative;
+    padding: 20px;
+    height: 1100px;
+    width: 850px;
+    overflow: scroll;
+}
+
+.preview-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    color: white;
+    background-color: rgb(13, 13, 142);
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.preview-contact > div {
+    display: flex;
+    gap: 20px;
+}
+
+.paper {
+    width: 80%; /* Adjust as needed */
+    padding-top: calc(11 / 8.5 * 80%); /* Maintain 8.5:11 aspect ratio */
+    background-color: white; /* Simulate paper color */
+    border: 1px solid black; /* Simulate paper border */
+    position: relative; /* Positioning context for child elements */
+}

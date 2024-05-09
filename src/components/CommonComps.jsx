@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { MdExpandMore, MdExpandLess } from "react-icons/md";
 
-export function ExpandBox({title, children}) {
+export function ExpandBox({title, children, className}) {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpanded = () => {
@@ -9,7 +9,7 @@ export function ExpandBox({title, children}) {
   };
 
   return (
-    <div className="border-container">
+    <div className={`${className} border-container`}>
       <div onClick={toggleExpanded} 
                 style={{ cursor: 'pointer', 
                         display: 'flex', 
@@ -17,9 +17,9 @@ export function ExpandBox({title, children}) {
                         justifyContent: 'space-between', 
                         alignItems: 'center'}}>
         <h3>{title}</h3>
-        <div>{expanded ? <MdExpandMore /> : <MdExpandLess />}</div>
+        <div>{expanded ? <MdExpandMore size={30}/> : <MdExpandLess size={30} />}</div>
       </div>
-      {expanded && <div>{children}</div>}
+      {expanded && <div className={`${className}-container`}>{children}</div>}
     </div>
   );
 }
@@ -34,6 +34,8 @@ export function InputComponent({ value, defaultValue, onInputChange, placeholder
     }
   }, [defaultValue, inputValue, onInputChange]);
 
+  const inputId = label.toLowerCase().replace(/\s/g, '');
+
   const handleChange = (e) => {
     const newValue = e.target.value;
     setInputValue(newValue);
@@ -42,8 +44,8 @@ export function InputComponent({ value, defaultValue, onInputChange, placeholder
 
   return (
       <>
-        {label && <label>{label}</label>}
-        <input type="text" onChange={handleChange} value ={inputValue} placeholder={placeholder}/>
+        {label && <label htmlFor="label">{label}</label>}
+        <input id = {inputId} type="text" onChange={handleChange} value ={inputValue} placeholder={placeholder}/>
       </>
       );
 }

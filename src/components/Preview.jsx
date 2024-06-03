@@ -47,7 +47,6 @@ export const Preview = () => {
                     ))}
                 </div>
             </div>
-            <button onClick={handleClick}>Test</button>
         </div>
     )
 }

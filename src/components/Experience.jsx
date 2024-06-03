@@ -9,7 +9,7 @@ function JobList({ workData }) {
   return (
     <>
     {workData.map((job) => (
-      <ExpandBox key={job.id} title={job.employer}>
+      <ExpandBox key={job.id} title={job.employer} isDeletable={true}>
       <div>
         <p>Title: {job.title}</p>
         <p style={{overflow: 'hidden',

@@ -4,7 +4,7 @@ import { ContextProvider } from './components/Context.jsx'
 import { Contact } from './components/Contact.jsx'
 import { Preview } from './components/Preview.jsx'
 import { ExperienceBuilder } from './components/Experience.jsx'
-import { Education } from './components/Education.jsx'
+import { EducationBuilder } from './components/Education.jsx'
 import './styles/App.css'
 
 function App() {
@@ -17,11 +17,11 @@ function App() {
           <ExpandBox title="Personal Information" className="contact">
             <Contact />
           </ExpandBox>
+          <ExpandBox title="Education" className="education">
+            <EducationBuilder />
+          </ExpandBox>
           <ExpandBox title="Work Experience" className="experience">
             <ExperienceBuilder />
-          </ExpandBox>
-          <ExpandBox title="Education" className="education">
-            <Education />
           </ExpandBox>
         </div>
         <Preview />

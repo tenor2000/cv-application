@@ -1,0 +1,16 @@
+.education-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.education-container > button {
+    width: 30%;
+    align-self: center;
+    margin-top: 1rem;
+}
+
+.education-form {
+    display: flex;
+    flex-direction: column;
+
+}

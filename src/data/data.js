@@ -1,3 +1,5 @@
+import { MdWorkHistory } from "react-icons/md"
+
 export const data = {
     contact: {
         name: '',
@@ -5,21 +7,8 @@ export const data = {
         phone: '',
         email: '',
     },
-    educationEdit: {
-        id: 0,
-        school: '',
-        degree: '',
-        gradDate: '',
-    },
     education: [],
-    experienceEdit: {
-        id: 0,
-        company: '',
-        position: '',
-        start: '',
-        end: '',
-    },
-    experience: [],
+    workHistory: [],
 }
 
 export const testData ={
